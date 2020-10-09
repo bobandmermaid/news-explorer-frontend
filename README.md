@@ -17,8 +17,8 @@
 `Node.js`   
 `ESlint`
 
-### Доступ к проекту
-
+### Посмотреть
++ https://bobandmermaid.github.io/news-explorer-frontend/
 
 ### Развертывание проекта
 1. Установить `Node.js`
