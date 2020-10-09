@@ -1,0 +1,15 @@
+.footer__icon {
+  margin-left: 24px;
+  display: block;
+}
+
+.footer__icon:hover {
+  opacity: .7;
+  transition: .1s linear;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__icon {
+    margin-left: 26px;
+  }
+}
