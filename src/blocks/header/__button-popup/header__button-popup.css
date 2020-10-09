@@ -17,5 +17,6 @@
     align-self: center;
     padding: 0;
     cursor: pointer;
+    outline: none;
   }
 }
