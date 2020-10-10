@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -13,7 +14,7 @@ module.exports = {
     saveArticle: './src/js/saveArticle.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     filename: 'js/[name].[chunkhash].js',
   },
   module: {
@@ -90,6 +91,7 @@ module.exports = {
     port: 3000,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ //
       filename: 'styles/[name].[contenthash].css',
     }),

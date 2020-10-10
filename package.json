@@ -1,6 +1,6 @@
 {
   "name": "news-explorer-frontend",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "frontend NewsExplorer",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "browserslist": "^4.14.5",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
