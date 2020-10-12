@@ -1,0 +1,14 @@
+@import url(./__title/news-result__title.css);
+@import url(./__button/news-results__button.css);
+@import url(./__cards/news-result__cards.css);
+@import url(./__done/news-result__done.css);
+@import url(./__image/news-result__image.css);
+@import url(./__not-found/news-result__not-found.css);
+@import url(./__search/news-result__search.css);
+@import url(./__search-subtitle/news-result__search-subtitle.css);
+@import url(./__subtitle-not-found/news-result__subtitle-not-found.css);
+@import url(./__title-not-found/news-result__title-not-found.css);
+
+.news-result {
+  position: relative;
+}
