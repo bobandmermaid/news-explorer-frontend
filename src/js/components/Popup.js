@@ -16,7 +16,7 @@ export default class Popup {
     this.popupElement.classList.remove('popup_is-opened');
   }
 
-  setListeners() {
+  setListeners = () => {
     this
       .openButton
       .addEventListener('click', this.open);

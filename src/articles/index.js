@@ -1,6 +1,6 @@
 import '../pages/saveArticle.css';
 
-import MenuMobile from './components/MenuMobile';
+import MenuMobile from '../js/components/MenuMobile';
 
 // eslint-disable-next-line no-undef
 const content = document.querySelector('.content');

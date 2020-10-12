@@ -1,7 +1,7 @@
-import '../pages/index.css';
+import './pages/index.css';
 
-import Popup from './components/Popup';
-import MenuMobile from './components/MenuMobile';
+import Popup from './js/components/Popup';
+import MenuMobile from './js/components/MenuMobile';
 
 // eslint-disable-next-line no-undef
 const content = document.querySelector('.content');
