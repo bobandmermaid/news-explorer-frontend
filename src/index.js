@@ -124,12 +124,9 @@ function signup(event) {
       popupSuccess.open();
     })
     .catch((err) => {
-      popupErrorServerAuth.textContent = err.message;
-      console.log(err);
-    })
-    .finally(() => {
       signupButtonDisable(email, password, name, popupButtonRegistration);
-    });
+      popupErrorServerAuth.textContent = err.message;
+    })
 }
 
 function signinButtonDisable(email, password, button) {
@@ -160,12 +157,9 @@ function signin(event) {
       popupLogin.close();
     })
     .catch((err) => {
-      popupErrorServerLogin.textContent = err.message;
-      console.log(err);
-    })
-    .finally(() => {
       signinButtonDisable(email, password, popupButtonLogin);
-    });
+      popupErrorServerLogin.textContent = err.message;
+    })
 }
 
 window.addEventListener('keydown', (event) => {

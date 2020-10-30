@@ -47,11 +47,11 @@ export default class SearchNews {
         }
       })
       .catch((err) => {
+        this._removeAttribute();
         console.log(err);
       })
       .finally(() => {
         this._loadingSpinner(false);
-        this._removeAttribute();
       });
   }
 
