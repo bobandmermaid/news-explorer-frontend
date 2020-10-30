@@ -1,15 +1,26 @@
 // ApiKey = 62594941a81f47838b8aa3a719809e89
 
-const API_URL = NODE_ENV === 'production'
-  ? 'https://nomoreparties.co'
-  : 'http://nomoreparties.co';
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
-const obj = {
-  baseUrl: `${API_URL}/cohort11`,
+const API_URL = NODE_ENV === 'development'
+  ? 'https://newsapi.org/v2/everything?q='
+  : 'https://nomoreparties.co/news/v2/everything?q=';
+
+const PROJECT_URL = NODE_ENV === 'development'
+  ? 'http://localhost:3000'
+  : 'https://api.newsexplorer.ru';
+
+export const config = {
+  baseUrl: `${PROJECT_URL}`,
   headers: {
-    authorization: '3d586cb3-b972-4364-9e4e-d3f459cab5c9',
     'Content-Type': 'application/json',
   },
 };
 
-export const config = JSON.stringify(obj);
+export const configApi = {
+  key: '62594941a81f47838b8aa3a719809e89',
+  pageSize: 100,
+  language: 'ru',
+  sortNews: 'publishedAt',
+  apiUrl: `${API_URL}`,
+};

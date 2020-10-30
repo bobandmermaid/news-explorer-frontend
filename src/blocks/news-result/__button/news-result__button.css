@@ -1,4 +1,4 @@
-.news-results__button {
+.news-result__button {
   border-style: none;
   font-weight: 500;
   font-size: 18px;
@@ -11,14 +11,14 @@
   margin: 0 auto;
 }
 
-.news-results__button:hover {
+.news-result__button:hover {
   color: #333543;
   background-color: #ececec;
   transition: .1s linear;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .news-results__button {
+  .news-result__button {
     padding: 16px 60px;
   }
 }
