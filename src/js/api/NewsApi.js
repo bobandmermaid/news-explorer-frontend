@@ -15,13 +15,14 @@ export default class NewsApi {
       `${this.apiUrl}${keyword}&from=${data.dateFrom}&to=${data.dateTo}&language=${this.language}&sortBy=${this.sortNews}&pageSize=${this.pageSize}&apiKey=${this.key}`
     )
       .then(res => {
-        if (!res.ok) {
-          return Promise.reject(`Ошибка: ${res.status}`);
+        if (res.ok) {
+          return res.json();
         }
-        return res.json();
+        const json = res.json();
+        return json.then(Promise.reject.bind(Promise))
       })
       .catch((err) => {
-        console.log(err)
+        throw err;
       })
   }
 }

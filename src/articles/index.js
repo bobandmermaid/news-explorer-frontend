@@ -54,7 +54,10 @@ async function resultFavorites() {
   mainApi.getUserData()
     .then((data) => {
       userFavorites.favoritesData(data.name, articles);
-    });
+    })
+    .catch((err) => {
+      console.log(err);
+    })
 }
 
 // Получаем имя для кнопки в хэдере и перенапрвляем на главную если незалогинен

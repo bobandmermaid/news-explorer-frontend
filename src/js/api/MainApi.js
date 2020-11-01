@@ -30,8 +30,8 @@ export default class MainApi {
   signin = (email, password) => {
     return fetch(`${this.baseUrl}/signin`, {
       method: 'POST',
-      credentials: 'include',
       headers: this.headers,
+      credentials: 'include',
       body: JSON.stringify({
         email: email,
         password: password,
@@ -52,8 +52,8 @@ export default class MainApi {
   getUserData = () => {
     return fetch(`${this.baseUrl}/users/me`, {
       method: 'GET',
-      credentials: 'include',
       headers: this.headers,
+      credentials: 'include',
     })
       .then((res) => this._getResponseData(res))
       .catch((err) => {
@@ -67,10 +67,7 @@ export default class MainApi {
       credentials: 'include',
       headers: this.headers,
     })
-      .then((res) => this._getResponseData(res))
-      .catch((err) => {
-        console.log(err);
-      })
+      .then((res) => this._getResponseData(res));
   }
 
   getArticles = () => {
@@ -79,10 +76,7 @@ export default class MainApi {
       credentials: 'include',
       headers: this.headers,
     })
-      .then((res) => this._getResponseData(res))
-      .catch((err) => {
-        console.log(err);
-      })
+      .then((res) => this._getResponseData(res));
   }
 
   createArticle = obj => {
@@ -100,10 +94,7 @@ export default class MainApi {
         image: obj.image,
       }),
     })
-      .then((res) => this._getResponseData(res))
-      .catch((err) => {
-        console.log(err);
-      })
+      .then((res) => this._getResponseData(res));
   }
 
   removeArticle = articleId => {
@@ -112,10 +103,7 @@ export default class MainApi {
       credentials: 'include',
       headers: this.headers,
     })
-      .then((res) => this._getResponseData(res))
-      .catch((err) => {
-        console.log(err);
-      })
+      .then((res) => this._getResponseData(res));
   }
 
   _getResponseData = res => {

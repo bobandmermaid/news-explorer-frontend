@@ -46,9 +46,9 @@ export default class SearchNews {
           resultNotFound.classList.remove('result-not-found_is-opened');
         }
       })
-      .catch((err) => {
+      .catch(() => {
         this._removeAttribute();
-        console.log(err);
+        return alert('Невозможно выполнить, проверьте соединение с интернетом!')
       })
       .finally(() => {
         this._loadingSpinner(false);

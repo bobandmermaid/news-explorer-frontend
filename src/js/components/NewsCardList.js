@@ -33,7 +33,7 @@ export default class NewsCardList {
 
   // Показать больше новостных карточек
   showButton = button => {
-    const array = this.cardsArray.slice(this.count, this.count += 3);
+    const array = this.cardsArray.slice(this.count, this.count += this.count);
     if (array.length < 3) {
       this.renderStatus(array);
       button.classList.add('news-result__button_is-opened');
