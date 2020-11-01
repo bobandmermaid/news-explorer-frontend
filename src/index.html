@@ -22,14 +22,14 @@
             <li class="menu__li">
               <a class="menu__link menu__link_white menu__link_selected" href="index.html">Главная</a>
             </li>
-            <li class="menu__li menu__li_auth">
+            <li class="menu__li menu__li_saved_message">
               <a class="menu__link menu__link_white" href="saveArticle.html">Сохраненные статьи</a>
             </li>
-<!--            <li class="menu__li menu__li_auth">-->
-<!--              <button class="button menu__button">Гретa<span class="menu__button_image-out"></span></button>-->
-<!--            </li>-->
-            <li class="menu__li menu__li_noauth">
-              <button class="button menu__button menu__button_padding">Авторизоваться</button>
+            <li class="menu__li menu__li_nouser">
+              <button class="button menu__button menu__button_logout"><span class="menu__button_auth_user"></span><img src="<%=require('./images/logout.svg')%>" class="menu__button_image-out"></button>
+            </li>
+            <li class="menu__li menu__li_auth">
+              <button class="button menu__button menu__button_padding menu__button_auth">Авторизоваться</button>
             </li>
           </ul>
         </nav>
@@ -42,91 +42,32 @@
           <form class="search__field">
             <input type="text" class="search__input"
                    placeholder="Введите тему новости" minlength="2" maxlength="32" required>
-            <button class="button search__button">Искать</button>
+            <button type="submit" class="button search__button">Искать</button>
           </form>
         </div>
       </div>
     </header>
 
     <main class="main">
-      <section class="news-result content__news-result">
-        <div class="news-result__done">
+        <section class="news-result news-result_is-opened">
           <h2 class="news-result__title">Результаты поиска</h2>
-          <div class="news-result__cards">
-<!--            Демонстрация карточек-->
-            <div class="card">
-              <div class="card__image">
-                <div class="card__buttons">
-                  <span class="card__text-login">Войдите, чтобы сохранять статьи</span>
-                  <button class="button card__button"></button>
-                </div>
-              </div>
-              <a href="" class="card__content" target="_blank">
-                <p class="card__date-text">2 октября, 2020</p>
-                <h2 class="card__title">Национальное достояние – парки</h2>
-                <p class="card__subtitle">
-                  В 2016 году Америка отмечала важный юбилей:
-                  сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.
-                </p>
-                <p class="card__source-news">Лента.ру</p>
-              </a>
-            </div>
-            <div class="card">
-              <div class="card__image">
-                <div class="card__buttons">
-                  <button class="button card__button card__button_save"></button>
-                </div>
-              </div>
-              <a href="" class="card__content" target="_blank">
-                <p class="card__date-text">2 августа, 2019</p>
-                <h2 class="card__title">Национальное достояние – парки</h2>
-                <p class="card__subtitle">
-                  В 2016 году Америка отмечала важный юбилей:
-                  сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.
-                </p>
-                <p class="card__source-news">Лента.ру</p>
-              </a>
-            </div>
-            <div class="card">
-              <div class="card__image">
-                <div class="card__buttons">
-                  <button class="button card__button"></button>
-                </div>
-              </div>
-              <a href="" class="card__content" target="_blank">
-                <p class="card__date-text">2 октября, 2020</p>
-                <h2 class="card__title">Национальное достояние – парки</h2>
-                <p class="card__subtitle">
-                  В 2016 году Америка отмечала важный юбилей:
-                  сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.
-                </p>
-                <p class="card__source-news">Лента.ру</p>
-              </a>
-            </div>
+          <div class="cards">
           </div>
-          <button class="button news-results__button">Показать ещё</button>
-        </div>
-      </section>
-      <!--      Демонстрация блоков-->
-      <section class="news-result content__news-result">
-        <div class="news-result__search">
+          <button class="button news-result__button">Показать ещё</button>
+        </section>
+
+        <section class="result-search">
           <div class="circle-preloader">
             <div class="circle-preloader__eclipse"><div></div></div>
           </div>
-          <p class="news-result__search-subtitle">Идет поиск новостей...</p>
-        </div>
-      </section>
-      <!--      Демонстрация блоков-->
-      <section class="news-result content__news-result">
-        <div class="news-result__not-found">
-          <img class="news-result__image" src="<%=require('./images/not-found.svg')%>" alt="Ничего не найдено.">
-          <h3 class="news-result__title-not-found">Ничего не найдено</h3>
-          <p class="news-result__subtitle-not-found">К сожалению по вашему запросу ничего не найдено.</p>
-        </div>
-      </section>
+          <p class="result-search__subtitle">Идет поиск новостей...</p>
+        </section>
+
+        <section class="result-not-found result-not-found_is-opened">
+          <img class="result-not-found__image" src="<%=require('./images/not-found.svg')%>" alt="Ничего не найдено.">
+          <h3 class="result-not-found__title">Ничего не найдено</h3>
+          <p class="result-not-found__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+        </section>
 
       <section class="author-about content__author-about">
         <div class="author-about__picture">
@@ -205,8 +146,8 @@
                    placeholder="Введите своё имя" minlength="2" maxlength="32" required>
             <span id="name-error" class="error"></span>
           </div>
-          <span id="doubleUser-error" class="error popup__error"></span>
-          <button type="submit" class="button popup__button popup__button_auth popup__button_valid">Зарегистрироваться</button>
+          <span id="doubleUser-error" class="error popup__error popup__error_server_auth"></span>
+          <button type="submit" class="button popup__button popup__button_auth">Зарегистрироваться</button>
         </form>
         <div class="popup__text">
           <p class="popup__or">или <a class="popup__name-link popup__name-link_auth" href="">Войти</a></p>
@@ -221,16 +162,17 @@
         <form class="popup__form" id="login" name="login" novalidate>
           <div class="popup__input-container">
             <span class="popup__name">Email</span>
-            <input id="emailLogin" type="email" name="emailLogin" class="popup__input popup__input_type_email"
+            <input id="emailLogin" type="email" name="email" class="popup__input popup__input_type_email"
                    placeholder="Введите Email" required>
             <span id="emailLogin-error" class="error"></span>
           </div>
           <div class="popup__input-container">
             <span class="popup__name">Пароль</span>
-            <input id="passwordLogin" type="password" name="passwordLogin" class="popup__input popup__input_type_password"
+            <input id="passwordLogin" type="password" name="password" class="popup__input popup__input_type_password"
                    placeholder="Введите пароль" minlength="8" required>
             <span id="passwordLogin-error" class="error"></span>
           </div>
+          <span id="loginUser-error" class="error popup__error popup__error_server_login"></span>
           <button type="submit" class="button popup__button popup__button_login" disabled>Войти</button>
         </form>
         <div class="popup__text">

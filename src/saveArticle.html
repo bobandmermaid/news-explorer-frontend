@@ -19,18 +19,18 @@
         <button class="header__button-popup header__button-popup_black"></button>
         <nav class="menu">
           <ul class="menu__nav">
-            <li class="menu__li"><a class="menu__link menu__link_black" href="index.html">Главная</a></li>
-            <li class="menu__li menu__li_auth"><a class="menu__link menu__link_black menu__link_selected-black" href="saveArticle.html">
+            <li class="menu__li">
+              <a class="menu__link menu__link_black" href="index.html">Главная</a>
+            </li>
+            <li class="menu__li menu__li_auth">
+              <a class="menu__link menu__link_black menu__link_selected-black" href="saveArticle.html">
               Сохраненные статьи</a>
             </li>
             <li class="menu__li menu__li_auth">
-              <button class="button menu__button menu__button_black">Гретa
-                <span class="menu__button_image-out menu__button_image-out-white menu__button_image-out-white_mobile"></span>
+              <button class="button menu__button menu__button_black menu__button_logout">
+                <span class="menu__button_auth_user"></span><img src="<%=require('./images/logout-black.svg')%>" class="menu__button_image-out menu__button_image-out-white menu__button_image-out-white_mobile">
               </button>
             </li>
-  <!--          <li class="menu__li menu__li_noauth">-->
-  <!--            <button class="button menu__button menu__button_black menu__button_padding">Авторизоваться</button>-->
-  <!--          </li>-->
           </ul>
         </nav>
       </div>
@@ -38,58 +38,16 @@
 
     <main class="main">
       <section class="result-articles content__result-articles">
-        <p class="result-articles__subtitle">Сохранённые статьи</p>
-        <h1 class="result-articles__title">Грета, у вас 5 сохранённых статей</h1>
-        <p class="result-articles__tags">По ключевым словам:
-          <span class="result-articles__tag"></span><span class="result-articles__tag">Природа</span>
-          <span class="result-articles__tag"></span>
-        </p>
+<!--        <p class="result-articles__subtitle">Сохранённые статьи</p>-->
+<!--        <h1 class="result-articles__title">Грета, у вас 5 сохранённых статей</h1>-->
+<!--        <p class="result-articles__tags">По ключевым словам:-->
+<!--          <span class="result-articles__tag"></span><span class="result-articles__tag"></span>-->
+<!--          <span class="result-articles__tag"></span>-->
+<!--        </p>-->
       </section>
 
-      <section class="news-result content__news-result content__news-result_articles">
-        <div class="news-result__cards">
-          <div class="card">
-            <div class="card__image">
-              <div class="card__buttons">
-                <span class="card__text-login">Убрать из сохранённых</span>
-                <button class="button card__button-delete"></button>
-              </div>
-              <div class="card__tag-box">
-                <span class="card__tag">Природа</span>
-              </div>
-            </div>
-            <a href="" class="card__content" target="_blank">
-              <p class="card__date-text">2 октября, 2020</p>
-              <h2 class="card__title">Национальное достояние – парки</h2>
-              <p class="card__subtitle">
-                В 2016 году Америка отмечала важный юбилей:
-                сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                где и сегодня каждый может приобщиться к природе.
-              </p>
-              <p class="card__source-news">Лента.ру</p>
-            </a>
-          </div>
-          <div class="card">
-            <div class="card__image">
-              <div class="card__buttons">
-                <button class="button card__button-delete"></button>
-              </div>
-              <div class="card__tag-box">
-                <span class="card__tag">Природа</span>
-              </div>
-            </div>
-            <a href="" class="card__content" target="_blank">
-              <p class="card__date-text">2 октября, 2020</p>
-              <h2 class="card__title">Национальное достояние – парки</h2>
-              <p class="card__subtitle">
-                В 2016 году Америка отмечала важный юбилей:
-                сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                где и сегодня каждый может приобщиться к природе.
-              </p>
-              <p class="card__source-news">Лента.ру</p>
-            </a>
-          </div>
-        </div>
+      <section class="news-result">
+        <div class="cards"></div>
       </section>
     </main>
 

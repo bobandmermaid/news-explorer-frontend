@@ -10,8 +10,8 @@ const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: {
-    main: './src/js/index.js',
-    saveArticle: './src/js/saveArticle.js',
+    main: './src/index.js',
+    saveArticle: './src/articles/index.js',
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
@@ -85,7 +85,7 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 3000,
+    port: 8081,
   },
   plugins: [
     new CleanWebpackPlugin(),
