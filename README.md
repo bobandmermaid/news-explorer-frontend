@@ -10,8 +10,6 @@
 - Регистрация в личном кабинете
 - Сохранение найденных статей в личном кабинете     
 
-`API проекта - https://github.com/bobandmermaid/news-explorer-api`
-
 ### Стек  
 `HTML`      
 `CSS`    
@@ -25,6 +23,9 @@
 ### Посмотреть
 + https://newsexplorer.ru
 + https://bobandmermaid.github.io/news-explorer-frontend/
+
+### API проекта
++ https://github.com/bobandmermaid/news-explorer-api
 
 ### Развертывание проекта
 1. Установить `Node.js`
