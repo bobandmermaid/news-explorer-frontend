@@ -21,9 +21,8 @@
 `PostCSS`   
 
 ### Посмотреть
-+ https://bobandmermaid.github.io/news-explorer-frontend/
-
 + https://newsexplorer.ru
++ https://bobandmermaid.github.io/news-explorer-frontend/
 
 ### Развертывание проекта
 1. Установить `Node.js`
