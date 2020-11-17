@@ -46,11 +46,9 @@ export default class FormValidator {
 
   handlerInputForm = event => { // Cлушатель на инпут
     this._isFieldValid(event.target);
-    if (this._someForm.checkValidity()) {
-      this.setSubmitButtonState(true);
-    } else {
-      this.setSubmitButtonState(false);
-    }
+    this._someForm.checkValidity()
+      ? this.setSubmitButtonState(true)
+      : this.setSubmitButtonState(false);
   }
 
   resetErrorsPopup = () => {
