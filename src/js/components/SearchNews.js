@@ -58,10 +58,8 @@ export default class SearchNews {
   _loadingSpinner = isLoading => {
     this.spinner = document.querySelector('.result-search');
 
-    if (isLoading) {
-      this.spinner.classList.add('result-search_is-opened');
-    } else {
-      this.spinner.classList.remove('result-search_is-opened');
-    }
+    isLoading
+      ? this.spinner.classList.add('result-search_is-opened')
+      : this.spinner.classList.remove('result-search_is-opened');
   }
 }

@@ -53,11 +53,9 @@ export default class UserFavorites {
   _getKeywordsData = articles => {
     const result = {};
     articles.forEach((item) => {
-      if (!result[item.keyword]) {
-        result[item.keyword] = 1;
-      } else {
-        result[item.keyword] += 1;
-      }
+      !result[item.keyword]
+        ?  result[item.keyword] = 1
+        :  result[item.keyword] += 1;
     });
     return Object.entries(result).sort((a, b) =>
       b[1] - a[1]).map((str) => str[0]);
