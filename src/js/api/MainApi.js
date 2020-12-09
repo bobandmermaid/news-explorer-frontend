@@ -10,9 +10,9 @@ export default class MainApi {
       credentials: 'include',
       headers: this.headers,
       body: JSON.stringify({
-        email: email,
-        password: password,
-        name: name,
+        email,
+        password,
+        name,
       }),
     })
       .then(res => {
@@ -33,8 +33,8 @@ export default class MainApi {
       headers: this.headers,
       credentials: 'include',
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email,
+        password,
       }),
     })
       .then(res => {
