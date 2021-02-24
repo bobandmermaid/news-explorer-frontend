@@ -21,6 +21,7 @@
 `PostCSS`
 
 ### Посмотреть
++ https://newsexplorer.ru
 + https://bobandmermaid.github.io/news-explorer-frontend/
 
 ### API проекта

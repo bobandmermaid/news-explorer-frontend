@@ -12,5 +12,3 @@ dist
 
 # Optional REPL history
 .idea
-
-.env
