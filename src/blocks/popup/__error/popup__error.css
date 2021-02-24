@@ -1,0 +1,6 @@
+.popup__error {
+  height: 33px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}

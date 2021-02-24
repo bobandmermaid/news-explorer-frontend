@@ -1,0 +1,10 @@
+.author-about__img {
+  max-width: 464px;
+}
+
+@media screen and (max-width: 1024px) {
+  .author-about__img {
+    max-width: 232px;
+    margin-top: 20px;
+  }
+}
