@@ -4,81 +4,82 @@ export default class MainApi {
     this.headers = config.headers;
   }
 
-  signup = (email, password, name) => {
-    return fetch(`${this.baseUrl}/signup`, {
+  signup = async (email, password, name) => {
+    try {
+      const res = await fetch(`${this.baseUrl}/signup`, {
+        method: "POST",
+        credentials: "include",
+        headers: this.headers,
+        body: JSON.stringify({
+          email,
+          password,
+          name,
+        }),
+      });
+      if (res.ok) {
+        return res.json();
+      }
+      const json = res.json();
+      return await json.then(Promise.reject.bind(Promise));
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  signin = async (email, password) => {
+    try {
+      const res = await fetch(`${this.baseUrl}/signin`, {
+        method: "POST",
+        headers: this.headers,
+        credentials: "include",
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      if (res.ok) {
+        return res.json();
+      }
+      const json = res.json();
+      return await json.then(Promise.reject.bind(Promise));
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  getUserData = async () => {
+    try {
+      const res = await fetch(`${this.baseUrl}/users/me`, {
+        method: "GET",
+        headers: this.headers,
+        credentials: "include",
+      });
+      return this._getResponseData(res);
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  logout = async () => {
+    const res = await fetch(`${this.baseUrl}/logout`, {
       method: "POST",
       credentials: "include",
       headers: this.headers,
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        name: name,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        const json = res.json();
-        return json.then(Promise.reject.bind(Promise));
-      })
-      .catch((err) => {
-        throw err;
-      });
+    });
+    return this._getResponseData(res);
   };
 
-  signin = (email, password) => {
-    return fetch(`${this.baseUrl}/signin`, {
-      method: "POST",
-      headers: this.headers,
-      credentials: "include",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        const json = res.json();
-        return json.then(Promise.reject.bind(Promise));
-      })
-      .catch((err) => {
-        throw err;
-      });
-  };
-
-  getUserData = () => {
-    return fetch(`${this.baseUrl}/users/me`, {
+  getArticles = async () => {
+    const res = await fetch(`${this.baseUrl}/articles`, {
       method: "GET",
-      headers: this.headers,
-      credentials: "include",
-    })
-      .then((res) => this._getResponseData(res))
-      .catch((err) => {
-        throw err;
-      });
-  };
-
-  logout = () => {
-    return fetch(`${this.baseUrl}/logout`, {
-      method: "POST",
       credentials: "include",
       headers: this.headers,
-    }).then((res) => this._getResponseData(res));
+    });
+    return this._getResponseData(res);
   };
 
-  getArticles = () => {
-    return fetch(`${this.baseUrl}/articles`, {
-      method: "GET",
-      credentials: "include",
-      headers: this.headers,
-    }).then((res) => this._getResponseData(res));
-  };
-
-  createArticle = obj => {
-    return fetch(`${this.baseUrl}/articles`, {
+  createArticle = async obj => {
+    const res = await fetch(`${this.baseUrl}/articles`, {
       method: "POST",
       credentials: "include",
       headers: this.headers,
@@ -91,15 +92,17 @@ export default class MainApi {
         link: obj.link,
         image: obj.image,
       }),
-    }).then((res) => this._getResponseData(res));
+    });
+    return this._getResponseData(res);
   };
 
-  removeArticle = articleId => {
-    return fetch(`${this.baseUrl}/articles/${articleId}`, {
+  removeArticle = async articleId => {
+    const res = await fetch(`${this.baseUrl}/articles/${articleId}`, {
       method: "DELETE",
       credentials: "include",
       headers: this.headers,
-    }).then((res) => this._getResponseData(res));
+    });
+    return this._getResponseData(res);
   };
 
   _getResponseData = res => {
