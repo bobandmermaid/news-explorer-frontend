@@ -96,13 +96,13 @@ export default class MainApi {
     return this._getResponseData(res);
   }
 
-  removeArticle = async articleId => {
-    const res = await fetch(`${this.baseUrl}/articles/${articleId}`, {
+  removeArticle = articleId => {
+    return fetch(`${this.baseUrl}/articles/${articleId}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: this.headers,
-    });
-    return this._getResponseData(res);
+    })
+      .then((res) => this._getResponseData(res));
   }
 
   _getResponseData = res => {

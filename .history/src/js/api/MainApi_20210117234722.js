@@ -60,26 +60,26 @@ export default class MainApi {
     }
   }
 
-  logout = async () => {
-    const res = await fetch(`${this.baseUrl}/logout`, {
+  logout = () => {
+    return fetch(`${this.baseUrl}/logout`, {
       method: 'POST',
       credentials: 'include',
       headers: this.headers,
-    });
-    return this._getResponseData(res);
+    })
+      .then((res) => this._getResponseData(res));
   }
 
-  getArticles = async () => {
-    const res = await fetch(`${this.baseUrl}/articles`, {
+  getArticles = () => {
+    return fetch(`${this.baseUrl}/articles`, {
       method: 'GET',
       credentials: 'include',
       headers: this.headers,
-    });
-    return this._getResponseData(res);
+    })
+      .then((res) => this._getResponseData(res));
   }
 
-  createArticle = async obj => {
-    const res = await fetch(`${this.baseUrl}/articles`, {
+  createArticle = obj => {
+    return fetch(`${this.baseUrl}/articles`, {
       method: 'POST',
       credentials: 'include',
       headers: this.headers,
@@ -92,17 +92,17 @@ export default class MainApi {
         link: obj.link,
         image: obj.image,
       }),
-    });
-    return this._getResponseData(res);
+    })
+      .then((res) => this._getResponseData(res));
   }
 
-  removeArticle = async articleId => {
-    const res = await fetch(`${this.baseUrl}/articles/${articleId}`, {
+  removeArticle = articleId => {
+    return fetch(`${this.baseUrl}/articles/${articleId}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: this.headers,
-    });
-    return this._getResponseData(res);
+    })
+      .then((res) => this._getResponseData(res));
   }
 
   _getResponseData = res => {
